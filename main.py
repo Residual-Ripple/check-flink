@@ -7,7 +7,7 @@ import requests
 import warnings
 from queue import Queue
 from datetime import datetime
-from urllib.parse import urlparse, urlencode, parse_qs
+from urllib.parse import urlparse, urlencode, parse_qs, quote
 import concurrent.futures
 
 # 设置日志
@@ -18,6 +18,10 @@ logging.basicConfig(
 )
 
 warnings.filterwarnings("ignore", message="Unverified HTTPS request is being made.*")
+
+# ==============================================================================
+# 配置区域
+# ==============================================================================
 
 # 获取访问令牌（用于 URL 验证）
 ACCESS_TOKEN = os.getenv("ACCESS_TOKEN", "")  # 从环境变量获取 token
@@ -47,7 +51,13 @@ RAW_HEADERS = {  # 仅用于获取原始数据
     "X-Check-Flink": "2.0"
 }
 
-PROXY_URL_TEMPLATE = f"{os.getenv('PROXY_URL')}{{}}" if os.getenv("PROXY_URL") else None
+# ==============================================================================
+# 关键修复：修复 URL 拼接问题
+# ==============================================================================
+PROXY_URL = os.getenv("PROXY_URL", "")
+# 修复：确保 PROXY_URL 末尾有斜杠，且不会产生双重斜杠
+PROXY_URL_TEMPLATE = f"{PROXY_URL.rstrip('/')}/{{}}" if PROXY_URL else None
+
 SOURCE_URL = os.getenv("SOURCE_URL", "https://blog.liushen.fun/flink_count.json")
 RESULT_FILE = "./result.json"
 AUTHOR_URL = os.getenv("AUTHOR_URL", "blog.liushen.fun")
@@ -67,6 +77,10 @@ if AUTHOR_URL:
     logging.info("👥 作者 URL: %s", AUTHOR_URL)
 else:
     logging.warning("⚠️  未提供作者 URL，将跳过友链页面检测")
+
+# ==============================================================================
+# 辅助函数
+# ==============================================================================
 
 def add_token_to_url(url, token):
     """将 token 添加到 URL 参数中"""
@@ -112,6 +126,7 @@ def request_url(session, url, headers=HEADERS, desc="", timeout=15, verify=True,
         return None, -1
 
 def load_previous_results():
+    """加载之前的检测结果"""
     if os.path.exists(RESULT_FILE):
         try:
             with open(RESULT_FILE, "r", encoding="utf-8") as f:
@@ -121,10 +136,12 @@ def load_previous_results():
     return {}
 
 def save_results(data):
+    """保存检测结果到文件"""
     with open(RESULT_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
 def is_url(path):
+    """判断是否为 URL"""
     return urlparse(path).scheme in ("http", "https")
 
 def check_author_link_in_page(session, linkpage_url):
@@ -185,6 +202,7 @@ def check_author_link_in_page(session, linkpage_url):
         return False
 
 def fetch_origin_data(origin_path):
+    """读取并解析数据源"""
     logging.info(f"📂 正在读取数据源: {origin_path}")
     try:
         if is_url(origin_path):
@@ -225,6 +243,7 @@ def fetch_origin_data(origin_path):
         return []
 
 def check_link(item, session):
+    """检查单个链接的可访问性"""
     link = item['link']
     has_author_link = False
     
@@ -234,7 +253,9 @@ def check_link(item, session):
         elif method == "代理访问":
             if not url_template:
                 continue
-            url = url_template.format(link)
+            # 修复：确保目标 URL 被正确编码，避免特殊字符问题
+            encoded_link = quote(link, safe=':/?=&')
+            url = url_template.format(encoded_link)
             # 添加 token 到代理 URL
             url = add_token_to_url(url, ACCESS_TOKEN)
         else:
@@ -265,6 +286,7 @@ def check_link(item, session):
     return item, -1, False
 
 def handle_api_requests(session):
+    """处理失败的链接，使用第三方 API 检测"""
     results = []
     while not api_request_queue.empty():
         time.sleep(0.2)
@@ -296,6 +318,7 @@ def handle_api_requests(session):
     return results
 
 def main():
+    """主函数"""
     try:
         link_list = fetch_origin_data(SOURCE_URL)
         if not link_list:
