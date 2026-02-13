@@ -7,7 +7,7 @@ import requests
 import warnings
 from queue import Queue
 from datetime import datetime
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urlencode, parse_qs
 import concurrent.futures
 
 # 设置日志
@@ -19,8 +19,8 @@ logging.basicConfig(
 
 warnings.filterwarnings("ignore", message="Unverified HTTPS request is being made.*")
 
-# 获取 API 秘钥（用于 Workers 代理验证）
-API_KEY = os.getenv("API_KEY", "")  # 从环境变量获取秘钥
+# 获取访问令牌（用于 URL 验证）
+ACCESS_TOKEN = os.getenv("ACCESS_TOKEN", "")  # 从环境变量获取 token
 
 # 请求头统一配置
 HEADERS = {
@@ -37,11 +37,7 @@ HEADERS = {
     "X-Check-Flink": "1.0"
 }
 
-# 如果配置了 API_KEY，添加到请求头
-if API_KEY:
-    HEADERS["X-API-Key"] = API_KEY
-
-RAW_HEADERS = {  # 仅用于获取原始数据，防止接收到Accept-Language等头部导致乱码
+RAW_HEADERS = {  # 仅用于获取原始数据
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -51,23 +47,19 @@ RAW_HEADERS = {  # 仅用于获取原始数据，防止接收到Accept-Language�
     "X-Check-Flink": "2.0"
 }
 
-# 如果配置了 API_KEY，添加到原始请求头
-if API_KEY:
-    RAW_HEADERS["X-API-Key"] = API_KEY
-
 PROXY_URL_TEMPLATE = f"{os.getenv('PROXY_URL')}{{}}" if os.getenv("PROXY_URL") else None
-SOURCE_URL = os.getenv("SOURCE_URL", "https://blog.liushen.fun/flink_count.json")  # 默认本地文件
+SOURCE_URL = os.getenv("SOURCE_URL", "https://blog.liushen.fun/flink_count.json")
 RESULT_FILE = "./result.json"
-AUTHOR_URL = os.getenv("AUTHOR_URL", "blog.liushen.fun")  # 作者URL，用于检测反链
+AUTHOR_URL = os.getenv("AUTHOR_URL", "blog.liushen.fun")
 api_request_queue = Queue()
 
 # 打印配置信息
 if PROXY_URL_TEMPLATE:
     logging.info("✅ 代理 URL 获取成功: %s", PROXY_URL_TEMPLATE)
-    if API_KEY:
-        logging.info("✅ API 秘钥已配置，将通过 Workers 代理访问")
+    if ACCESS_TOKEN:
+        logging.info("✅ 访问令牌已配置，将通过 URL 验证访问")
     else:
-        logging.warning("⚠️  未配置 API 秘钥，代理访问可能失败")
+        logging.warning("⚠️  未配置访问令牌，代理访问可能失败")
 else:
     logging.warning("⚠️  未提供代理 URL，将使用直接访问")
 
@@ -75,6 +67,29 @@ if AUTHOR_URL:
     logging.info("👥 作者 URL: %s", AUTHOR_URL)
 else:
     logging.warning("⚠️  未提供作者 URL，将跳过友链页面检测")
+
+def add_token_to_url(url, token):
+    """将 token 添加到 URL 参数中"""
+    if not token:
+        return url
+    
+    from urllib.parse import urlparse, parse_qs, urlunparse
+    
+    parsed = urlparse(url)
+    query_params = parse_qs(parsed.query)
+    query_params['token'] = [token]
+    
+    new_query = urlencode(query_params, doseq=True)
+    new_url = urlunparse((
+        parsed.scheme,
+        parsed.netloc,
+        parsed.path,
+        parsed.params,
+        new_query,
+        parsed.fragment
+    ))
+    
+    return new_url
 
 def request_url(session, url, headers=HEADERS, desc="", timeout=15, verify=True, **kwargs):
     """统一封装的 GET 请求函数"""
@@ -85,15 +100,15 @@ def request_url(session, url, headers=HEADERS, desc="", timeout=15, verify=True,
         
         # 记录响应状态码
         if response.status_code == 200:
-            logging.info(f"[{desc}] ✅ {url} - {latency}s")
+            logging.info(f"[{desc}] ✅ {url[:80]}... - {latency}s")
         elif response.status_code == 403:
-            logging.error(f"[{desc}] ❌ {url} - 403 Forbidden (秘钥验证失败)")
+            logging.error(f"[{desc}] ❌ {url[:80]}... - 403 Forbidden (令牌验证失败)")
         else:
-            logging.warning(f"[{desc}] ⚠️  {url} - {response.status_code}")
+            logging.warning(f"[{desc}] ⚠️  {url[:80]}... - {response.status_code}")
         
         return response, latency
     except requests.RequestException as e:
-        logging.warning(f"[{desc}] ❌ {url} - 请求失败: {str(e)[:100]}")
+        logging.warning(f"[{desc}] ❌ {url[:80]}... - 请求失败: {str(e)[:100]}")
         return None, -1
 
 def load_previous_results():
@@ -132,7 +147,7 @@ def check_author_link_in_page(session, linkpage_url):
         author_url.replace('https://', 'http://'),
         author_url.replace('https://', '//'),
         author_url.replace('https://', ''),
-        AUTHOR_URL,  # 原始值（可能没有协议号）
+        AUTHOR_URL,
         '//' + AUTHOR_URL,
         'https://' + AUTHOR_URL,
         'http://' + AUTHOR_URL
@@ -197,7 +212,6 @@ def fetch_origin_data(origin_path):
     try:
         rows = list(csv.reader(content.splitlines()))
         logging.info("✅ 成功解析 CSV 格式数据")
-        # 支持新的CSV格式：name, link, linkpage
         result = []
         for row in rows:
             if len(row) >= 2:
@@ -214,7 +228,18 @@ def check_link(item, session):
     link = item['link']
     has_author_link = False
     
-    for method, url in [("直接访问", link), ("代理访问", PROXY_URL_TEMPLATE.format(link) if PROXY_URL_TEMPLATE else None)]:
+    for method, url_template in [("直接访问", None), ("代理访问", PROXY_URL_TEMPLATE)]:
+        if method == "直接访问":
+            url = link
+        elif method == "代理访问":
+            if not url_template:
+                continue
+            url = url_template.format(link)
+            # 添加 token 到代理 URL
+            url = add_token_to_url(url, ACCESS_TOKEN)
+        else:
+            continue
+        
         if not url or not is_url(url):
             logging.warning(f"[{method}] 无效链接: {link}")
             continue
@@ -222,7 +247,7 @@ def check_link(item, session):
         response, latency = request_url(session, url, desc=method)
         
         if response and response.status_code == 200:
-            logging.info(f"[{method}] ✅ {link} - 延迟 {latency} 秒")
+            logging.info(f"[{method}] ✅ {link[:60]}... - 延迟 {latency} 秒")
             
             # 如果链接可达且有linkpage字段，检测友链页面
             if 'linkpage' in item and item['linkpage'] and AUTHOR_URL:
@@ -230,11 +255,11 @@ def check_link(item, session):
             
             return item, latency, has_author_link
         elif response and response.status_code == 403:
-            logging.error(f"[{method}] ❌ {link} - 403 Forbidden (请检查 API_KEY 是否正确)")
+            logging.error(f"[{method}] ❌ {link[:60]}... - 403 Forbidden (请检查 ACCESS_TOKEN 是否正确)")
         elif response:
-            logging.warning(f"[{method}] ⚠️  {link} - 状态码 {response.status_code}")
+            logging.warning(f"[{method}] ⚠️  {link[:60]}... - 状态码 {response.status_code}")
         else:
-            logging.warning(f"[{method}] ❌ {link} - 请求失败")
+            logging.warning(f"[{method}] ❌ {link[:60]}... - 请求失败")
 
     api_request_queue.put(item)
     return item, -1, False
@@ -253,17 +278,16 @@ def handle_api_requests(session):
             try:
                 res_json = response.json()
                 if int(res_json.get("code")) == 200 and int(res_json.get("data")) == 200:
-                    logging.info(f"[API] ✅ {link} - 状态码 200")
+                    logging.info(f"[API] ✅ {link[:60]}... - 状态码 200")
                     item['latency'] = latency
                     
-                    # 如果API检测成功且有linkpage字段，检测友链页面
                     if 'linkpage' in item and item['linkpage'] and AUTHOR_URL:
                         has_author_link = check_author_link_in_page(session, item['linkpage'])
                 else:
-                    logging.warning(f"[API] ⚠️  {link} - 状态异常 [{res_json.get('code')}, {res_json.get('data')}]")
+                    logging.warning(f"[API] ⚠️  {link[:60]}... - 状态异常 [{res_json.get('code')}, {res_json.get('data')}]")
                     item['latency'] = -1
             except Exception as e:
-                logging.error(f"[API] ❌ {link} - 解析响应失败: {e}")
+                logging.error(f"[API] ❌ {link[:60]}... - 解析响应失败: {e}")
                 item['latency'] = -1
         else:
             item['latency'] = -1
@@ -337,10 +361,10 @@ def main():
         logging.info(f"🔗 其中 {has_author_count} 个友链页面包含作者链接")
         logging.info(f"💾 结果已保存至: {RESULT_FILE}")
         
-        if API_KEY:
-            logging.info("✅ 使用 Workers 代理检测（已配置 API_KEY）")
+        if ACCESS_TOKEN:
+            logging.info("✅ 使用 URL 验证（已配置 ACCESS_TOKEN）")
         else:
-            logging.warning("⚠️  未使用 Workers 代理（未配置 API_KEY）")
+            logging.warning("⚠️  未使用 URL 验证（未配置 ACCESS_TOKEN）")
             
     except Exception as e:
         logging.exception(f"运行主程序失败: {e}")
