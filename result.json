@@ -1,0 +1,314 @@
+{
+    "timestamp": "2026-11-01 01:28:18",
+    "accessible_count": 0,
+    "inaccessible_count": 38,
+    "total_count": 38,
+    "has_author_link_count": 0,
+    "author_url": "blog.liushen.fun",
+    "link_status": [
+        {
+            "name": "<!DOCTYPE html><html lang=\"zh-CN\" data-astro-cid-uxukrvmx> <head><!-- Global Metadata --><meta charset=\"utf-8\" data-astro-transition-persist=\"astro-7q4ekuvx-3\"><meta name=\"viewport\" content=\"width=device-width",
+            "link": "initial-scale=1\" data-astro-transition-persist=\"astro-gydmpfu3-4\"><link rel=\"icon\" href=\"/favicon.webp\" sizes=\"any\" data-astro-transition-persist=\"astro-aung3zbl-5\"><link rel=\"sitemap\" href=\"/sitemap-index.xml\" data-astro-transition-persist=\"astro-lgbbpxf7-6\"><link rel=\"alternate\" type=\"application/rss+xml\" title=\"YvYang's Blog\" href=\"https://blog.yvyang.top/rss.xml\" data-astro-transition-persist=\"astro-jnevzpxq-7\"><meta name=\"generator\" content=\"Astro v6.4.8\" data-astro-transition-persist=\"astro-ngukag4a-8\"><!-- Theme initialization — prevents flash of wrong theme --><script data-astro-transition-persist=\"astro-4f3n264m-9\">",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": ""
+        },
+        {
+            "name": "    ev.newDocument.documentElement.setAttribute('data-theme'",
+            "link": " getTheme());",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": ""
+        },
+        {
+            "name": "  document.addEventListener('astro:before-swap'",
+            "link": " (ev) => {",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": ""
+        },
+        {
+            "name": "    ev.newDocument.documentElement.setAttribute('data-theme'",
+            "link": " getTheme());",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": ""
+        },
+        {
+            "name": "</script><!-- Canonical URL --><link rel=\"canonical\" href=\"https://blog.yvyang.top/\"><!-- Primary Meta Tags --><title>YvYang&#39;s Blog | 个人博客</title><meta name=\"title\" content=\"YvYang's Blog | 个人博客\"><meta name=\"description\" content=\"YvYang's Blog - 记录趣事、分享生活的个人小站。\"><meta name=\"robots\" content=\"index",
+            "link": "follow",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "max-snippet:-1"
+        },
+        {
+            "name": "\t\tvar FIELDS = ['site_pv'",
+            "link": " 'page_pv'",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "'site_uv'];"
+        },
+        {
+            "name": "\t\t\t\tvar key = 'vercount_uv_' + host.replace(/[^a-zA-Z0-9_-]/g",
+            "link": " '_');",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": ""
+        },
+        {
+            "name": "\t\t\t\tfetch('https://events.vercount.one/api/v2/log'",
+            "link": " {",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": ""
+        },
+        {
+            "name": "\t\t\t\t\tbody: JSON.stringify({ url: window.location.href",
+            "link": " isNewUv: isNewUv })",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": ""
+        },
+        {
+            "name": "\t\tdocument.addEventListener('astro:page-load'",
+            "link": " function () {",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": ""
+        },
+        {
+            "name": "</script><!-- View Transitions --><meta name=\"astro-view-transitions-enabled\" content=\"true\"><meta name=\"astro-view-transitions-fallback\" content=\"animate\"><script type=\"module\" src=\"/_astro/ClientRouter.astro_astro_type_script_index_0_lang.ClVLs1kt.js\"></script><style>.content-card[data-astro-cid-53dg47w7]{position:relative;z-index:20;width:min(1200px",
+            "link": "100%);margin:0 auto;padding:0 1em 2em;box-sizing:border-box}@media(max-width:720px){.content-card[data-astro-cid-53dg47w7]{padding:0}}@media(min-width:721px){.content-card-floating[data-astro-cid-53dg47w7]{margin-top:clamp(-120px",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "-9vw"
+        },
+        {
+            "name": "</style><link rel=\"stylesheet\" href=\"/_astro/PageShell.DYuVk1xk.css\"><style>.draft-badge[data-astro-cid-s3jkptqn]{display:inline-flex;align-items:center;margin-inline-start:.55em;padding:.18em .52em;color:var(--accent);font-size:.68em;font-weight:700;line-height:1.2;letter-spacing:.08em;vertical-align:.18em;background:color-mix(in srgb",
+            "link": "var(--accent) 10%",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "transparent);border:1px solid color-mix(in srgb"
+        },
+        {
+            "name": ".pinned-badge[data-astro-cid-ixorl6er]{display:inline-flex;align-items:center;margin-inline-start:.55em;padding:.18em .52em;color:var(--accent);font-size:.68em;font-weight:700;line-height:1.2;letter-spacing:.08em;vertical-align:.18em;background:color-mix(in srgb",
+            "link": "var(--accent) 10%",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "transparent);border:1px solid color-mix(in srgb"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-timing-function: cubic-bezier(0.76",
+            "link": " 0",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "0.24"
+        },
+        {
+            "name": "\tanimation-name: astroFadeIn; }</style></head> <body data-page-id=\"home\" data-astro-cid-uxukrvmx> <header class=\"transparent\" data-astro-transition-persist=\"header\" data-astro-cid-3ef6ksr2 data-astro-transition-scope=\"astro-l7r54iwe-10\"> <div id=\"navigation-progress\" aria-hidden=\"true\" data-astro-cid-3ef6ksr2></div> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href=\"/\" data-astro-cid-3ef6ksr2>YvYang&#39;s Blog</a></h2> <div class=\"internal-links\" data-astro-cid-3ef6ksr2> <div class=\"nav-dropdown\" data-astro-cid-3ef6ksr2> <button class=\"nav-dropdown__trigger\" type=\"button\" aria-haspopup=\"true\" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2>导航</span> <svg class=\"nav-dropdown__chevron\" xmlns=\"http://www.w3.org/2000/svg\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" data-astro-cid-3ef6ksr2> <polyline points=\"6 9 12 15 18 9\" data-astro-cid-3ef6ksr2></polyline> </svg> </button> <div class=\"nav-dropdown__menu\" data-astro-cid-3ef6ksr2> <a href=\"/blog\" data-astro-cid-3ef6ksr2> 归档 </a><a href=\"/tags\" data-astro-cid-3ef6ksr2> 标签 </a><a href=\"/comment\" data-astro-cid-3ef6ksr2> 留言板 </a> </div> </div><div class=\"nav-dropdown\" data-astro-cid-3ef6ksr2> <button class=\"nav-dropdown__trigger\" type=\"button\" aria-haspopup=\"true\" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2>朋友</span> <svg class=\"nav-dropdown__chevron\" xmlns=\"http://www.w3.org/2000/svg\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" data-astro-cid-3ef6ksr2> <polyline points=\"6 9 12 15 18 9\" data-astro-cid-3ef6ksr2></polyline> </svg> </button> <div class=\"nav-dropdown__menu\" data-astro-cid-3ef6ksr2> <a href=\"/friend\" data-astro-cid-3ef6ksr2> 友链 </a><a href=\"/friendcircle\" data-astro-cid-3ef6ksr2> 朋友圈 </a> </div> </div><div class=\"nav-dropdown\" data-astro-cid-3ef6ksr2> <button class=\"nav-dropdown__trigger\" type=\"button\" aria-haspopup=\"true\" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2>分享</span> <svg class=\"nav-dropdown__chevron\" xmlns=\"http://www.w3.org/2000/svg\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" data-astro-cid-3ef6ksr2> <polyline points=\"6 9 12 15 18 9\" data-astro-cid-3ef6ksr2></polyline> </svg> </button> <div class=\"nav-dropdown__menu\" data-astro-cid-3ef6ksr2> <a href=\"/resource\" data-astro-cid-3ef6ksr2> 资源 </a><a href=\"https://music.yvyang.top\" target=\"_blank\" rel=\"noreferrer\" data-astro-cid-3ef6ksr2> 音乐馆 </a> </div> </div><div class=\"nav-dropdown\" data-astro-cid-3ef6ksr2> <button class=\"nav-dropdown__trigger\" type=\"button\" aria-haspopup=\"true\" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2>整理</span> <svg class=\"nav-dropdown__chevron\" xmlns=\"http://www.w3.org/2000/svg\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" data-astro-cid-3ef6ksr2> <polyline points=\"6 9 12 15 18 9\" data-astro-cid-3ef6ksr2></polyline> </svg> </button> <div class=\"nav-dropdown__menu\" data-astro-cid-3ef6ksr2> <a href=\"https://dn.yvyang.top\" target=\"_blank\" rel=\"noreferrer\" data-astro-cid-3ef6ksr2> 白板 </a><a href=\"https://chat.yvyang.dpdns.org\" target=\"_blank\" rel=\"noreferrer\" data-astro-cid-3ef6ksr2> 在线会议 </a><a href=\"https://fc.yvyang.top\" target=\"_blank\" rel=\"noreferrer\" data-astro-cid-3ef6ksr2> 朋友圈部署 </a><a href=\"https://tv.yvyang.top/\" target=\"_blank\" rel=\"noreferrer\" data-astro-cid-3ef6ksr2> 在线影视 </a><a href=\"https://bing.yvyang.top/\" target=\"_blank\" rel=\"noreferrer\" data-astro-cid-3ef6ksr2> 每日一图 </a><a href=\"https://folia.yvyang.top/\" target=\"_blank\" rel=\"noreferrer\" data-astro-cid-3ef6ksr2> 在线音乐 </a> </div> </div><div class=\"nav-dropdown\" data-astro-cid-3ef6ksr2> <button class=\"nav-dropdown__trigger\" type=\"button\" aria-haspopup=\"true\" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2>关于</span> <svg class=\"nav-dropdown__chevron\" xmlns=\"http://www.w3.org/2000/svg\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" data-astro-cid-3ef6ksr2> <polyline points=\"6 9 12 15 18 9\" data-astro-cid-3ef6ksr2></polyline> </svg> </button> <div class=\"nav-dropdown__menu\" data-astro-cid-3ef6ksr2> <a href=\"/about\" data-astro-cid-3ef6ksr2> 关于我 </a><a href=\"/rss.xml\" data-astro-cid-3ef6ksr2> RSS </a><a href=\"https://status.yvyang.top/\" target=\"_blank\" rel=\"noreferrer\" data-astro-cid-3ef6ksr2> 网站监测 </a><a href=\"https://umami.yvyang.top/\" target=\"_blank\" rel=\"noreferrer\" data-astro-cid-3ef6ksr2> 数据统计 </a> </div> </div> <div class=\"nav-indicator\" id=\"nav-indicator\" data-astro-cid-3ef6ksr2></div> </div> <div class=\"header-actions\" data-astro-cid-3ef6ksr2> <button id=\"search-btn\" class=\"search-btn\" aria-label=\"搜索\" data-astro-cid-3ef6ksr2> <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-astro-cid-3ef6ksr2> <circle cx=\"11\" cy=\"11\" r=\"8\" data-astro-cid-3ef6ksr2></circle> <path d=\"m21 21-4.35-4.35\" data-astro-cid-3ef6ksr2></path> </svg> </button> <button id=\"theme-toggle\" class=\"theme-toggle-btn\" aria-label=\"切换深色模式\" data-astro-cid-3ef6ksr2> <svg class=\"sun-icon\" xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-astro-cid-3ef6ksr2> <circle cx=\"12\" cy=\"12\" r=\"5\" data-astro-cid-3ef6ksr2></circle> <line x1=\"12\" y1=\"1\" x2=\"12\" y2=\"3\" data-astro-cid-3ef6ksr2></line> <line x1=\"12\" y1=\"21\" x2=\"12\" y2=\"23\" data-astro-cid-3ef6ksr2></line> <line x1=\"4.22\" y1=\"4.22\" x2=\"5.64\" y2=\"5.64\" data-astro-cid-3ef6ksr2></line> <line x1=\"18.36\" y1=\"18.36\" x2=\"19.78\" y2=\"19.78\" data-astro-cid-3ef6ksr2></line> <line x1=\"1\" y1=\"12\" x2=\"3\" y2=\"12\" data-astro-cid-3ef6ksr2></line> <line x1=\"21\" y1=\"12\" x2=\"23\" y2=\"12\" data-astro-cid-3ef6ksr2></line> <line x1=\"4.22\" y1=\"19.78\" x2=\"5.64\" y2=\"18.36\" data-astro-cid-3ef6ksr2></line> <line x1=\"18.36\" y1=\"5.64\" x2=\"19.78\" y2=\"4.22\" data-astro-cid-3ef6ksr2></line> </svg> <svg class=\"moon-icon\" xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-astro-cid-3ef6ksr2> <path d=\"M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z\" data-astro-cid-3ef6ksr2></path> </svg> </button> <button id=\"mobile-menu-btn\" class=\"mobile-menu-btn\" aria-label=\"打开菜单\" aria-expanded=\"false\" aria-controls=\"mobile-nav-drawer\" data-astro-cid-3ef6ksr2> <svg class=\"menu-icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" data-astro-cid-3ef6ksr2> <line x1=\"3\" y1=\"6\" x2=\"21\" y2=\"6\" data-astro-cid-3ef6ksr2></line> <line x1=\"3\" y1=\"12\" x2=\"21\" y2=\"12\" data-astro-cid-3ef6ksr2></line> <line x1=\"3\" y1=\"18\" x2=\"21\" y2=\"18\" data-astro-cid-3ef6ksr2></line> </svg> <svg class=\"close-icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" data-astro-cid-3ef6ksr2> <path d=\"M18 6L6 18\" data-astro-cid-3ef6ksr2></path> <path d=\"M6 6l12 12\" data-astro-cid-3ef6ksr2></path> </svg> </button> </div> </nav> <div id=\"mobile-nav-overlay\" class=\"mobile-nav-overlay\" aria-hidden=\"true\" data-astro-cid-3ef6ksr2></div> <aside id=\"mobile-nav-drawer\" class=\"mobile-nav-drawer\" aria-hidden=\"true\" data-astro-cid-3ef6ksr2> <nav class=\"mobile-nav-links\" aria-label=\"移动端导航\" data-astro-cid-3ef6ksr2> <details class=\"mobile-nav-group\" data-astro-cid-3ef6ksr2> <summary class=\"mobile-nav-link\" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2>导航</span> <svg class=\"mobile-nav-group__chevron\" xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" data-astro-cid-3ef6ksr2> <polyline points=\"6 9 12 15 18 9\" data-astro-cid-3ef6ksr2></polyline> </svg> </summary> <div class=\"mobile-nav-group__children\" data-astro-cid-3ef6ksr2> <a href=\"/blog\" class=\"mobile-nav-sublink\" data-astro-cid-3ef6ksr2> 归档 </a><a href=\"/tags\" class=\"mobile-nav-sublink\" data-astro-cid-3ef6ksr2> 标签 </a><a href=\"/comment\" class=\"mobile-nav-sublink\" data-astro-cid-3ef6ksr2> 留言板 </a> </div> </details><details class=\"mobile-nav-group\" data-astro-cid-3ef6ksr2> <summary class=\"mobile-nav-link\" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2>朋友</span> <svg class=\"mobile-nav-group__chevron\" xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" data-astro-cid-3ef6ksr2> <polyline points=\"6 9 12 15 18 9\" data-astro-cid-3ef6ksr2></polyline> </svg> </summary> <div class=\"mobile-nav-group__children\" data-astro-cid-3ef6ksr2> <a href=\"/friend\" class=\"mobile-nav-sublink\" data-astro-cid-3ef6ksr2> 友链 </a><a href=\"/friendcircle\" class=\"mobile-nav-sublink\" data-astro-cid-3ef6ksr2> 朋友圈 </a> </div> </details><details class=\"mobile-nav-group\" data-astro-cid-3ef6ksr2> <summary class=\"mobile-nav-link\" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2>分享</span> <svg class=\"mobile-nav-group__chevron\" xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" data-astro-cid-3ef6ksr2> <polyline points=\"6 9 12 15 18 9\" data-astro-cid-3ef6ksr2></polyline> </svg> </summary> <div class=\"mobile-nav-group__children\" data-astro-cid-3ef6ksr2> <a href=\"/resource\" class=\"mobile-nav-sublink\" data-astro-cid-3ef6ksr2> 资源 </a><a href=\"https://music.yvyang.top\" class=\"mobile-nav-sublink\" target=\"_blank\" rel=\"noreferrer\" data-astro-cid-3ef6ksr2> 音乐馆 </a> </div> </details><details class=\"mobile-nav-group\" data-astro-cid-3ef6ksr2> <summary class=\"mobile-nav-link\" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2>整理</span> <svg class=\"mobile-nav-group__chevron\" xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" data-astro-cid-3ef6ksr2> <polyline points=\"6 9 12 15 18 9\" data-astro-cid-3ef6ksr2></polyline> </svg> </summary> <div class=\"mobile-nav-group__children\" data-astro-cid-3ef6ksr2> <a href=\"https://dn.yvyang.top\" class=\"mobile-nav-sublink\" target=\"_blank\" rel=\"noreferrer\" data-astro-cid-3ef6ksr2> 白板 </a><a href=\"https://chat.yvyang.dpdns.org\" class=\"mobile-nav-sublink\" target=\"_blank\" rel=\"noreferrer\" data-astro-cid-3ef6ksr2> 在线会议 </a><a href=\"https://fc.yvyang.top\" class=\"mobile-nav-sublink\" target=\"_blank\" rel=\"noreferrer\" data-astro-cid-3ef6ksr2> 朋友圈部署 </a><a href=\"https://tv.yvyang.top/\" class=\"mobile-nav-sublink\" target=\"_blank\" rel=\"noreferrer\" data-astro-cid-3ef6ksr2> 在线影视 </a><a href=\"https://bing.yvyang.top/\" class=\"mobile-nav-sublink\" target=\"_blank\" rel=\"noreferrer\" data-astro-cid-3ef6ksr2> 每日一图 </a><a href=\"https://folia.yvyang.top/\" class=\"mobile-nav-sublink\" target=\"_blank\" rel=\"noreferrer\" data-astro-cid-3ef6ksr2> 在线音乐 </a> </div> </details><details class=\"mobile-nav-group\" data-astro-cid-3ef6ksr2> <summary class=\"mobile-nav-link\" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2>关于</span> <svg class=\"mobile-nav-group__chevron\" xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" data-astro-cid-3ef6ksr2> <polyline points=\"6 9 12 15 18 9\" data-astro-cid-3ef6ksr2></polyline> </svg> </summary> <div class=\"mobile-nav-group__children\" data-astro-cid-3ef6ksr2> <a href=\"/about\" class=\"mobile-nav-sublink\" data-astro-cid-3ef6ksr2> 关于我 </a><a href=\"/rss.xml\" class=\"mobile-nav-sublink\" data-astro-cid-3ef6ksr2> RSS </a><a href=\"https://status.yvyang.top/\" class=\"mobile-nav-sublink\" target=\"_blank\" rel=\"noreferrer\" data-astro-cid-3ef6ksr2> 网站监测 </a><a href=\"https://umami.yvyang.top/\" class=\"mobile-nav-sublink\" target=\"_blank\" rel=\"noreferrer\" data-astro-cid-3ef6ksr2> 数据统计 </a> </div> </details> </nav> </aside> </header>  <script type=\"module\" src=\"/_astro/Header.astro_astro_type_script_index_0_lang.BDd_pjvw.js\"></script> <div id=\"main-content\" data-astro-cid-uxukrvmx> <main class=\"page-shell-main\" data-astro-cid-uxukrvmx>   <div class=\"hero-header hero-interactive\" data-astro-cid-tq5aemxn data-astro-transition-scope=\"astro-4dqjyuvm-1\"> <div class=\"hero-bg\" style=\"background-image: url('https://bu.dusays.com/2025/08/25/68ac097718354.webp')\" data-astro-cid-tq5aemxn></div> <div class=\"hero-overlay\" data-astro-cid-tq5aemxn></div> <div class=\"hero-content\" data-astro-cid-tq5aemxn> <h1 id=\"typewriter-etsurc\" data-text=\"YvYang's Blog\" data-astro-cid-tnzwls7f=\"true\" class=\"typewriter hero-title\"> <span class=\"typed-text\" data-astro-cid-tnzwls7f>YvYang&#39;s Blog</span><span class=\"cursor\" aria-hidden=\"true\" data-astro-cid-tnzwls7f>_</span> </h1>  <script type=\"module\">document.addEventListener(\"astro:page-load\"",
+            "link": "()=>{document.querySelectorAll(\".typewriter[data-text]\").forEach(o=>{const t=o.getAttribute(\"data-text\")||\"\"",
+            "latency": -1,
+            "fail_count": 14,
+            "has_author_link": false,
+            "linkpage": "r=o.querySelector(\".typed-text\");if(!r||!t)return;const n=r;n.textContent=\"\";let e=0;setTimeout(()=>{function a(){if(e<t.length){n.textContent+=t.charAt(e)"
+        }
+    ]
+}
